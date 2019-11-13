@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "347423F51E7F4B5600D3E6D6"
-               BuildableName = "libAppAuth-watchOS.a"
-               BlueprintName = "AppAuth-watchOS"
+               BlueprintIdentifier = "342F42842177B1FC00574F24"
+               BuildableName = "AppAuthCore.framework"
+               BlueprintName = "AppAuthCore"
                ReferencedContainer = "container:AppAuth.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3489707D2177B3B000ABEED4"
+               BuildableName = "AppAuthCoreTests.xctest"
+               BlueprintName = "AppAuthCoreTests"
+               ReferencedContainer = "container:AppAuth.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "342F42842177B1FC00574F24"
+            BuildableName = "AppAuthCore.framework"
+            BlueprintName = "AppAuthCore"
+            ReferencedContainer = "container:AppAuth.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "347423F51E7F4B5600D3E6D6"
-            BuildableName = "libAppAuth-watchOS.a"
-            BlueprintName = "AppAuth-watchOS"
+            BlueprintIdentifier = "342F42842177B1FC00574F24"
+            BuildableName = "AppAuthCore.framework"
+            BlueprintName = "AppAuthCore"
             ReferencedContainer = "container:AppAuth.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "347423F51E7F4B5600D3E6D6"
-            BuildableName = "libAppAuth-watchOS.a"
-            BlueprintName = "AppAuth-watchOS"
+            BlueprintIdentifier = "342F42842177B1FC00574F24"
+            BuildableName = "AppAuthCore.framework"
+            BlueprintName = "AppAuthCore"
             ReferencedContainer = "container:AppAuth.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

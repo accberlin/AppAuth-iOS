@@ -108,8 +108,25 @@ NS_ASSUME_NONNULL_BEGIN
   NSURL *standardizedURL = [URL standardizedURL];
   NSURL *standardizedRedirectURL = [redirectionURL standardizedURL];
 
+  return [standardizedURL.scheme caseInsensitiveCompare:standardizedRedirectURL.scheme] == NSOrderedSame
+      && OIDIsEqualIncludingNil(standardizedURL.user, standardizedRedirectURL.user)
+      && OIDIsEqualIncludingNil(standardizedURL.password, standardizedRedirectURL.password)
+      && OIDIsEqualIncludingNil(standardizedURL.host, standardizedRedirectURL.host)
+      && OIDIsEqualIncludingNil(standardizedURL.port, standardizedRedirectURL.port)
+      && OIDIsEqualIncludingNil(standardizedURL.path, standardizedRedirectURL.path);
+}
+
+/*! @brief Does the redirection URL equal another URL down to the path component?
+    @param URL The first redirect URI to compare.
+    @param redirectionURL The second redirect URI to compare.
+    @return YES if the URLs match down to the path level (query params are ignored).
+ */
++ (BOOL)URL:(NSURL *)URL matchesRedirectionURL:(NSURL *)redirectionURL withCustomRedirectScheme:(NSString *)customRedirectScheme {
+  NSURL *standardizedURL = [URL standardizedURL];
+  NSURL *standardizedRedirectURL = [redirectionURL standardizedURL];
+
   //Added custom redirect scheme logic
-  return OIDIsEqualIncludingNil(standardizedURL.scheme, _request.customRedirectScheme) &&
+  return OIDIsEqualIncludingNil(standardizedURL.scheme, customRedirectScheme) &&
     OIDIsEqualIncludingNil(standardizedURL.user, standardizedRedirectURL.user) &&
     OIDIsEqualIncludingNil(standardizedURL.password, standardizedRedirectURL.password) &&
     OIDIsEqualIncludingNil(standardizedURL.host, standardizedRedirectURL.host) &&
@@ -118,7 +135,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (BOOL)shouldHandleURL:(NSURL *)URL {
-  return [[self class] URL:URL matchesRedirectionURL:_request.redirectURL];
+  return [[self class] URL:URL matchesRedirectionURL:_request.redirectURL withCustomRedirectScheme:_request.customRedirectScheme];
 }
 
 - (BOOL)resumeExternalUserAgentFlowWithURL:(NSURL *)URL {

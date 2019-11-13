@@ -119,7 +119,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)shouldHandleURL:(NSURL *)URL {
   return [[self class] URL:URL matchesRedirectionURL:_request.redirectURL];
->>>>>>> e07ba3325e2b5e9cca1c7a022715fe98368dd18d
 }
 
 - (BOOL)resumeExternalUserAgentFlowWithURL:(NSURL *)URL {
